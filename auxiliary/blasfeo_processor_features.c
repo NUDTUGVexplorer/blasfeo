@@ -44,6 +44,10 @@
     || defined(TARGET_X86_AMD_BARCELONA)
 #if defined(__GNUC__) || defined(__clang__)
 #include <cpuid.h>
+// define missing bit_AVX2 (e.g. in case of clang compiler)
+#ifndef bit_AVX2
+#define bit_AVX2 (1 << 5)
+#endif
 #endif
 #endif
 
